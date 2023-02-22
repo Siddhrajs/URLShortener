@@ -14,7 +14,7 @@ This URL shortening system ensembles following requirements:
 #### Analytic report will get generated on the day-to-day basis.
 
 ## Technical Specifications
-NanoURL service utilises following technologies for the development and proper functioning:
+URLShortener service utilises following technologies for the development and proper functioning:
 #### Language - Java
 #### Framework - Spring Boot
 #### Database - MySQL

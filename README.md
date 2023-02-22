@@ -15,8 +15,8 @@ This URL shortening system ensembles following requirements:
 
 ## Technical Specifications
 URLShortener service utilises following technologies for the development and proper functioning:
-#### Language - Java
-#### Framework - Spring Boot
-#### Database - MySQL
-#### Server - Apache Tomcat
-#### Cache - Redis
+* Language - Java
+* Framework - Spring Boot
+* Database - MySQL
+* Server - Apache Tomcat
+* Cache - Redis

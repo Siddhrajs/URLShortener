@@ -1,0 +1,1 @@
+INSERT INTO report VALUES(1, now(), 0, 0, 0, 0)

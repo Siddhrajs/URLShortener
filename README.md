@@ -20,3 +20,33 @@ URLShortener service utilises following technologies for the development and pro
 * Database - MySQL
 * Server - Apache Tomcat
 * Cache - Redis
+
+## System APIs
+System will follow REST API nomenclature for defining APIs. Following table shows the list of APIs which are defined in the NanoURL system.
+
+[[add table here]]
+
+POST - /url
+		Input Request-Body JSON { “longUrl”: String }
+		Output JSON { “shortUrl”: String, “longUrl”: String }
+		Service createUrl (newUrl)
+
+GET - /url
+		Input Request-Param(“shorturl” - String)
+		Output String (long url)
+		Service getLongUrl (shortUrl)
+
+DELETE - /url
+		Input NA
+		Output NA
+		Service removeOldUrls ()
+
+GET - /report
+		Input Request-Param (“date” - String) [ format: dd-mm-yyyy ]
+		Output JSON { “numTotalClicks”: Number, “numUniqueClicks”: Number, “numShortUrlCreated”: Number, “numLongUrlAdded”: Number}
+		Service getReportByDate ()
+
+POST - /report
+		Input NA
+		Output JSON { “numTotalClicks”: Number, “numUniqueClicks”: Number, “numShortUrlCreated”: Number, “numLongUrlAdded”: Number}
+		Service generateReport ()

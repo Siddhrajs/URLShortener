@@ -14,6 +14,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpHeaders;
+import java.net.URI;
 
 @Controller
 public class UrlController {
@@ -35,7 +37,9 @@ public class UrlController {
 		String longUrl = urlService.getLongUrl(shortUrl);
 
 		if (longUrl != null) {
-			return new ResponseEntity<Object>(longUrl, HttpStatus.OK);
+			HttpHeaders headers = new HttpHeaders();
+			headers.setLocation(URI.create(longUrl));
+			return new ResponseEntity<>(headers, HttpStatus.FOUND);
 		} else {
 			return new ResponseEntity<Object>(Constants.MSG_URL_NOT_FOUND, HttpStatus.NOT_FOUND);
 		}

@@ -18,7 +18,7 @@ public class CacheUrlService {
 	@Autowired
 	private UrlDao urlDao;
 
-	@Cacheable("shortToLong")
+//	@Cacheable("shortToLong")
 	public String findLongUrl(String shortUrl) {
 		Url url = urlDao.findByShortUrl(shortUrl);
 		if (url != null) {
